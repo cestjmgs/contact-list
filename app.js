@@ -7,6 +7,7 @@ const listaDeContactos = [
 
 function nuevoContacto(nombreCompleto) {
     listaDeContactos.push(nombreCompleto);
+    
 }
 
 
@@ -18,16 +19,12 @@ function eliminarContacto (borrarNombre) {
     }
 }
 
-
-
 function imprimirLista () {
     for (let i = 0; i < listaDeContactos.length; i++) {
-        console.log (listaDeContactos[i]);
-}
-};
+        console.log(listaDeContactos[i]);
+}}; 
+
 
 nuevoContacto ("Yoko Ono"); 
 eliminarContacto ("Paul McCartney"); 
 imprimirLista ();
-
-
