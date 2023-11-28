@@ -23,6 +23,14 @@ function eliminarContacto (id) {
     }
 };
 
+function actualizarContacto (id, nuevaInfo) {
+    const indice = listaDeContactos.findIndex(contacto => contacto.id === id);
+    if (indice !== -1) {
+        listaDeContactos[indice] = { ...listaDeContactos[indice], ...nuevaInfo };
+    }
+};
+
+
 function imprimirLista () {
     listaDeContactos.forEach( Contacto => {
         console.log(`id: ${Contacto.id}`);
@@ -40,6 +48,8 @@ nuevoContacto (1, "John", "Lennon", 77701842032, "Nueva York", "West 72nd Street
 nuevoContacto (2, "Paul", "McCartney", 1828458129, "Los Angeles", "St John's Wood", ); 
 nuevoContacto (3, "George", "Harrison", "1901934781", "Liverpool", "957 Lancashire",);
 nuevoContacto (4, "Ringo", "Starr", "736192641", "Los Angeles", "Beverly Hills",);
+
+actualizarContacto(2, { telefono: 182946812082, ciudad: "Londres" });
 
 eliminarContacto(4);
 imprimirLista ();
